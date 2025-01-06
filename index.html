@@ -89,33 +89,9 @@
             <li><strong>Main Address:</strong> 深圳市龙岗区坂田街道马安堂社区环城南路5号坂田国际中心C栋六层C1栋6楼609(1)</li>
         </ul>
 </body>
+          <p></p>
           <div class="carousel">
-            <img src="https://www.hercoo.com/cdn/shop/products/22_900x.jpg?v=1669713555" alt="Product 1">
-            <img src="https://www.hercoo.com/cdn/shop/products/39_900x.jpg?v=1669779807" alt="Product 2">
-            <img src="phttps://www.hercoo.com/cdn/shop/products/1_7486fc76-e78a-4fa1-8f13-1832a6877a5b_540x.jpg?v=1670298604" alt="Product 3">
+            <img src="https://www.hercoo.com/cdn/shop/products/1_7486fc76-e78a-4fa1-8f13-1832a6877a5b_540x.jpg" >
         </div>
-        <div class="carousel-buttons">
-            <button id="prev">&#10094;</button>
-            <button id="next">&#10095;</button>
-        </div>
-    </div>
 
-    <script>
-        const carousel = document.querySelector('.carousel');
-        const images = carousel.querySelectorAll('img');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-
-        let index = 0;
-
-        function showImage(newIndex) {
-            index = newIndex;
-            if (index < 0) index = images.length - 1;
-            if (index >= images.length) index = 0;
-            carousel.style.transform = `translateX(${-index * 600}px)`;
-        }
-
-        prevButton.addEventListener('click', () => showImage(index - 1));
-        nextButton.addEventListener('click', () => showImage(index + 1));
-    </script>
 </html>
