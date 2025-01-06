@@ -3,13 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to SSC Technology</title>
+    <title>Company Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #0078d7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .photo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #0078d7;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            margin: 20px 0;
+        }
+        .carousel img {
+            width: 600px;
+            flex-shrink: 0;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to SSC Technology</h1>
-    <p>Your go-to platform for the latest in technology and innovation!</p>
-    <p>Explore cutting-edge solutions, tech news, and resources designed to empower your journey in the digital world.</p>
-    <p>Have a look at our website and discover more about us:</p>
-    <a href="https://www.ssctechnology.com" target="_blank">Visit SSC Technology</a>
+    <header>
+        <h1>Welcome to Our Company</h1>
+    </header>
+
+    <div class="container">
+        <div class="photo">
+            <img src="your-photo.jpg" alt="网站完善ing...">
+        </div>
+        <ul>
+            <li><strong>Name:</strong> 深圳盛思创科技有限公司</li>
+            <li><strong>Phone Number:</strong> +1 9033329693</li>
+            <li><strong>Email Address:</strong> sscpik@outlook.com</li>
+            <li><strong>Main Address:</strong> 深圳市龙岗区坂田街道马安堂社区环城南路5号坂田国际中心C栋六层C1栋6楼609(1)</li>
+        </ul>
 </body>
+          <div class="carousel">
+            <img src="https://www.hercoo.com/cdn/shop/products/22_900x.jpg?v=1669713555" alt="Product 1">
+            <img src="https://www.hercoo.com/cdn/shop/products/39_900x.jpg?v=1669779807" alt="Product 2">
+            <img src="phttps://www.hercoo.com/cdn/shop/products/1_7486fc76-e78a-4fa1-8f13-1832a6877a5b_540x.jpg?v=1670298604" alt="Product 3">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const images = carousel.querySelectorAll('img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let index = 0;
+
+        function showImage(newIndex) {
+            index = newIndex;
+            if (index < 0) index = images.length - 1;
+            if (index >= images.length) index = 0;
+            carousel.style.transform = `translateX(${-index * 600}px)`;
+        }
+
+        prevButton.addEventListener('click', () => showImage(index - 1));
+        nextButton.addEventListener('click', () => showImage(index + 1));
+    </script>
 </html>
